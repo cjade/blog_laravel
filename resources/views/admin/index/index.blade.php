@@ -451,12 +451,6 @@
 <script src="assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/dist/js/demo.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $("#content").slimScroll({
-            height: 'auto'
-        });
-    });
-</script>
+
 </body>
 </html>
