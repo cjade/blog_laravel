@@ -46,12 +46,11 @@
             </h1>
             <ol class="breadcrumb" id="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
             </ol>
         </section>
 
         <!-- Main content -->
+        @section('content')
         <section class="content" >
             <div class="row">
                 <div class="col-xs-12">
@@ -59,7 +58,7 @@
 
                     <div class="box  box-success">
                         <div class="box-header">
-                            <h3 class="box-title">Data Table With Full Features</h3>
+                            <button url="/index.php/user/add.html" data="" type="button" class="btn btn-success refresh"><i class="fa fa-plus"></i> 新增</button>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -247,12 +246,13 @@
             </div>
             <!-- /.row -->
         </section>
+        @show
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0.1
+            <b>Version</b> {{config('sys.PROGRAM_VERSION')}}
         </div>
         <strong>Copyright © 2016 - 2020  <a href="http://tcina.com">星辰开发维护团队</a>.</strong> All rights
         reserved.
@@ -282,6 +282,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="assets/dist/js/demo.js"></script>
 <!-- page script -->
+
+<script src="common/weather/jquery.leoweather.min.js"></script>
 <script>
     $(document).ready(function() {
         var height= '525';
@@ -330,8 +332,10 @@
 
         });
 
-
-
+        /**
+         * 时间天气
+         */
+        $('#weather').leoweather({format:'，{时段}好！<span id="colock">现在时间是：<strong>{年}年{月}月{日}日 星期{周} {时}:{分}:{秒}</strong>，</span> <b>{城市}天气</b> {天气} {夜间气温}℃ ~ {白天气温}℃ '});
 
 
     } );

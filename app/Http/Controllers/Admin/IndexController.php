@@ -1,5 +1,6 @@
 <?php
 /**
+ * 后台首页
  * Created by PhpStorm.
  * User: chengyu
  * Date: 17/4/6
@@ -8,6 +9,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -16,6 +19,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('admin.layouts.app');
+        $bool = Cache::add('key2','val2',60);
+//        $val = Cache::pull('key2');
+        var_dump($bool);
+//        return view('admin.layouts.app');
+        return view('admin.index.index');
     }
 }

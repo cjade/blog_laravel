@@ -18,10 +18,14 @@
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                <!-- Notifications: style can be found in dropdown.less -->
-                <!-- Tasks: style can be found in dropdown.less -->
-                <!-- User Account: style can be found in dropdown.less -->
+
+                <li>
+                    <a href="javascript:void(0);" class="dropdown-toggle">
+                        尊敬的管理员<span class="hidden-xs" id="weather"></span>
+                        </a>
+                </li>
+
+
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="assets/dist/img/avatar5.png" class="user-image" alt="User Image">

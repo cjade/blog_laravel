@@ -8,6 +8,12 @@
  */
 
 return [
+    //程序版本号
+    'PROGRAM_VERSION'=>'v1.0.0',
+    //框架
+    'FRAMEWORK_VERSION' => 'Laravel5.4 ',
+    //百度开发API KEY
+    'BAIDU_APIKEY'=>'6RugHStc4rBYHikvKizUbQglhyDQ0N5h',
     //后台访问域名，不用http://开头
     'sys_admin_domain' => 'admin.blog.com',
 
