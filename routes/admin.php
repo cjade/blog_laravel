@@ -8,6 +8,13 @@
  */
 
 Route::group(['domain'=>config('sys.sys_admin_domain') ],function (){
+
     Route::get('/', 'IndexController@index');
+    //登录
+    Route::any('login', 'LoginController@login');
+
+
+    //极验
+    Route::get('auth/geetest', 'GetGeetestController@getGeetest');
 
 });

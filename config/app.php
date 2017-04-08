@@ -177,6 +177,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //极验
+        Germey\Geetest\GeetestServiceProvider::class,
+//        qq
+//        SocialiteProviders\Manager\ServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +231,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //极验
+        'Geetest' => Germey\Geetest\Geetest::class,
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
     ],
 

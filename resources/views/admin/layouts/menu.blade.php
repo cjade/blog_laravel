@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
+                <img src="common/img/lol-timo-panda.png" onerror="this.src='common/img/lol-timo-panda.png'" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Alexander Pierce</p>

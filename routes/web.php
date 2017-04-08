@@ -11,6 +11,9 @@
 |
 */
 
+//github第三方登录
+Route::get('github', 'UserThirdPartyController@redirectToProvider');
+Route::get('github/callback', 'UserThirdPartyController@handleProviderCallback');
 Route::get('/', function () {
     return view('welcome');
 });
