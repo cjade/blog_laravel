@@ -48,7 +48,7 @@
                                 <a href="#" class="btn btn-default btn-flat">修改信息</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">退出登录</a>
+                                <a href="{{url('logout')}}" class="btn btn-default btn-flat">退出登录</a>
                             </div>
                         </li>
                     </ul>

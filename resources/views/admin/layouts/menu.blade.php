@@ -35,6 +35,7 @@
                 <ul class="treeview-menu">
                     <li class="menuChild"><a href="assets/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                     <li class="menuChild"><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    <li class="menuChild"><a href="jump"><i class="fa fa-circle-o"></i> 跳</a></li>
                 </ul>
             </li>
 

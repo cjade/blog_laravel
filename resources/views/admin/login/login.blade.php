@@ -33,17 +33,17 @@
     <div class="login-box-body">
 
         <p class="login-box-msg">
-            <span class="label label-info">请填写您的账号和密码（test/111111）</span>
+            <span class="label label-info">请填写您的账号和密码（test@test.com/111111）</span>
         </p>
 
         <form action="" method="post">
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

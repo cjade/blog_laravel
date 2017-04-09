@@ -6,6 +6,7 @@
     <title>AdminLTE 2 | Data Tables</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -26,6 +27,13 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery 2.2.3 -->
+    <script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script>
+        $.ajaxSetup({ headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        } });
+    </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -266,8 +274,7 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- DataTables -->
@@ -283,7 +290,11 @@
 <script src="assets/dist/js/demo.js"></script>
 <!-- page script -->
 
+<script src="common/bootbox/bootbox.min.js"></script>
+
 <script src="common/weather/jquery.leoweather.min.js"></script>
+
+
 <script>
     $(document).ready(function() {
         var height= '525';
@@ -335,10 +346,14 @@
         /**
          * 时间天气
          */
-        $('#weather').leoweather({format:'，{时段}好！<span id="colock">现在时间是：<strong>{年}年{月}月{日}日 星期{周} {时}:{分}:{秒}</strong>，</span> <b>{城市}天气</b> {天气} {夜间气温}℃ ~ {白天气温}℃ '});
+        $('#weather').leoweather({
+            format:'，{时段}好！<span id="colock">现在时间是：<strong>{年}年{月}月{日}日 星期{周} {时}:{分}:{秒}</strong>，</span> <b>{城市}天气</b> {天气} {夜间气温}℃ ~ {白天气温}℃ '
+        });
 
 
     } );
+
+
 </script>
 </body>
 </html>
