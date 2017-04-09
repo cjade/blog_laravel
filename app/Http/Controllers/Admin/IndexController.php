@@ -20,12 +20,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $users = DB::select('select * from users where active = ?', [1]);
-//        $bool = Cache::add('key2','val2',60);
-//        Redis::expire('key2',60);//设置过期时间10秒
-        $val = Cache::get('key2');
-        var_dump($val);
+        if(!Cache::has('mysql_version')){
+            $mysql = DB::select('select VERSION() as version');
+            Cache::add('mysql_version',$mysql[0]->version,60*24*30);//缓存30天
+        }
 //        return view('admin.layouts.app');
-        return view('admin.index.index');
+        return view('admin.index.index',['mysql_version'=>Cache::get('mysql_version')]);
     }
 }

@@ -81,11 +81,12 @@
                                         <p><i class="fa fa-cog"></i> 操作系统：{{PHP_OS}}                       </p>
                                         <p><i class="fa fa-sitemap"></i> 框架版本：{{config('sys.FRAMEWORK_VERSION')}}                       </p>
                                         <p><i class="fa fa-windows"></i> 服务环境：{{$_SERVER["SERVER_SOFTWARE"]}}                       </p>
-                                        <p><i class="fa fa-windows"></i> 程序版本：{{config('sys.PROGRAM_VERSION')}}                       </p>
+                                        <p><i class="fa fa-vine"></i> 程序版本：{{config('sys.PROGRAM_VERSION')}}                       </p>
 
                                         <p><i class="fa fa-credit-card"></i> PHP 版本：{{PHP_VERSION}}                        </p>
+                                        <p><i class="fa fa-vimeo-square"></i> MySQL 版本：{{$mysql_version}}                        </p>
                                         <p><i class="fa fa-warning"></i> 上传附件限制：{{ini_get('upload_max_filesize')}}                        </p>
-                                        <p><i class="fa fa-warning"></i> 剩余空间：{{round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M'}}                        </p>
+                                        <p><i class="fa fa-cube"></i> 剩余空间：{{round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M'}}                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -102,6 +103,9 @@
                                         <p><i class="fa fa-user"></i> 团队成员：Jason&nbsp;
                                         </p>
                                         <p><i class="fa fa-envelope-o"></i> 联系邮箱：862226994@qq.com
+                                        <p>
+                                            &nbsp;
+                                        </p>
                                         <p>
                                             &nbsp;
                                         </p>
