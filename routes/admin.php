@@ -6,9 +6,10 @@
  * Date: 17/4/6
  * Time: 下午9:36
  */
+
 Route::group(['domain'=>config('sys.sys_admin_domain') ],function (){
-
-
+    //跳
+    Route::get('jump','PublicController@jump');
     //后台首页
     Route::get('/', 'IndexController@index');
     Route::get('index', 'IndexController@index');

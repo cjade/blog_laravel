@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ empty(csrf_token())?session(\Illuminate\Http\Request::session()->getId())->_token:csrf_token() }}">
     <title>星辰Admin - 跳转提示</title>
 
     <script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -19,6 +19,9 @@
 <body>
 <?php
 $wait = empty($wait)?3:$wait;
+//$info = empty($info)?session('info'):$info;
+//$status = empty($status)?session('status'):$status;
+//$url = empty($url)?session('$url'):$url;
 ?>
 <div class="ui card" style="text-align:center;width:40%;position: fixed;top: 20%;left: 30%">
     @if($status == 1)
@@ -41,6 +44,7 @@ $wait = empty($wait)?3:$wait;
         <div class="bar"></div>
     </div>
 </div>
+
 </body>
 <script type="text/javascript">
     (function(){

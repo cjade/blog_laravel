@@ -24,11 +24,11 @@ class CheckPermissions
         }
         //登录超时
         if(!Cache::has(session('user')->user_id)){
-            return view('public.jump',['status'=>0,'info'=>'登录超时，请重新登录！','url'=>'loginTimeout']);
+            return redirect('jump')->with(['status'=>0,'info'=>'登录超时，请重新登录！','url'=>'loginTimeout']);
         }
         //其它地址登录
         if(cache("$user->user_id") != $request->session()->getId()){
-            return view('public.jump',['status'=>0,'info'=>'您的账号在别的地方登录了，请重新登录！','url'=>'login']);
+            return redirect('jump')->with(['status'=>0,'info'=>'您的账号在别的地方登录了，请重新登录！','url'=>'login']);
         }
         return $next($request);
     }

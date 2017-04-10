@@ -25,6 +25,7 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
+
         if(!Cache::has('mysql_version')){
             $mysql = DB::select('select VERSION() as version');
             Cache::add('mysql_version',$mysql[0]->version,60*24*30);//缓存30天
