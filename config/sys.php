@@ -9,7 +9,9 @@
 
 return [
     //在线时间
-    'online_time' => '1',//分钟
+    'online_time' => '60',//分钟
+    //是否开启动态密码校验
+    'auth_password_check'=>true,
     //程序版本号
     'PROGRAM_VERSION'=>'v1.0.0',
     //框架
