@@ -35,7 +35,7 @@
         } });
     </script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed" data-spy="scroll" data-target="#scrollspy">
 <div class="wrapper">
 
     <!-- 头部 -->
@@ -45,7 +45,7 @@
     @include('admin.layouts.menu')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" id="content">
+    <div class="content-wrapper" >
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
@@ -297,7 +297,6 @@
 
 <script>
     $(document).ready(function() {
-        var height= '525';
         /**
          * 自动适配面包屑导航
          */
@@ -313,12 +312,6 @@
             breadcrumb.prev().text(ownName);
 
 
-        });
-        /**
-         *滚动区域高度
-         */
-        $("#content").slimScroll({
-            height: height+'px'
         });
         /**
          * 表格

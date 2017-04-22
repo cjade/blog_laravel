@@ -25,7 +25,9 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if($request->isMethod('post')){
+
             $input =  $request->all();//获取所以input值
+//            return ['status'=>0,'info'=>$input['email']];
             $user = DB::table('users')->where([
                 ['user_email','=',$input['email']],
                 ['type','=','1']
@@ -49,7 +51,8 @@ class LoginController extends Controller
                 ]);
             session(['user'=>$user]);  //验证通过,并将用户信息存储到session中
             cache([$user->user_id=>$request->session()->getId()],config('sys.online_time'));
-            return view('public.jump',['status'=>1,'info'=>'登录成功！','url'=>'index']);
+            return ['status'=>1,'info'=>'登录成功!'];
+//            return view('public.jump',['status'=>1,'info'=>'登录成功！','url'=>'index']);
         }
 
         return view('admin.login.login');

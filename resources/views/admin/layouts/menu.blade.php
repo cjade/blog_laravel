@@ -1,4 +1,5 @@
 <aside class="main-sidebar">
+    <div class="sidebar" id="scrollspy">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
@@ -23,7 +24,7 @@
         </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" >
             <li class="header">主菜单</li>
             <li class="treeview">
                 <a href="#">
@@ -46,4 +47,5 @@
         </ul>
     </section>
     <!-- /.sidebar -->
+        </div>
 </aside>

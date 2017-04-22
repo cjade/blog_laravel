@@ -30,6 +30,7 @@ class CheckPermissions
         if(cache("$user->user_id") != $request->session()->getId()){
             return redirect('jump')->with(['status'=>0,'info'=>'您的账号在别的地方登录了，请重新登录！','url'=>'login']);
         }
+        //todo::可不做  因为前面已经判断它地方登录
         if(config('sys.auth_password_check')){
             if(!$this->auth_password_check()){
                 return redirect('jump')->with(['status'=>0,'info'=>'登录失效:用户密码已更改!','url'=>'login']);
