@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 class AdminUsers extends Controller
 {
     public function index(){
+
         echo bcrypt('111111');//加密
     }
 }
