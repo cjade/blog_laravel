@@ -20,11 +20,13 @@ Route::group(['domain'=>config('sys.sys_admin_domain') ],function (){
     //登录超时
     Route::any('loginTimeout', 'LoginController@loginTimeout');
     //极验
-    Route::get('auth/geetest', 'GetGeetestController@getGeetest');
-
 
     Route::group(['middleware' => ['web','permissions']], function () {
-
+        //管理员列表
+        Route::get('admin-user', 'AdminUsersController@index');
+        Route::get('admin-getUser', 'AdminUsersController@listUser')->name('admin-user');;
+        //删除管理员
+        Route::delete('admin-userDel', 'AdminUsersController@del');
     });
 
 });

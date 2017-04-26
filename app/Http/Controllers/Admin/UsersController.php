@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
     /**
-     * @action index 管理员列表
+     * @action index 用户列表
      */
     public function index()
     {

@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
-    <!-- iCheck -->
-    {{--<link rel="stylesheet" href="assets/plugins/iCheck/square/blue.css">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,18 +25,17 @@
 
     <![endif]-->
 
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-
     <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/element-ui/1.2.9/theme-default/index.css">
+    <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/element-ui/1.2.9/index.js"></script>
+    <script src="//cdn.bootcss.com/axios/0.16.1/axios.min.js"></script>
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="window.event.returnValue=false" >
 <div class="login-box">
     <div class="login-logo">
-        <a href="javascript:void(0);"><b>星辰</b>Admin</a>
+        <b>星辰</b>Admin
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body" id="app">
@@ -66,14 +63,6 @@
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-
-<!-- jQuery 2.2.3 -->
-{{--<script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>--}}
-<!-- Bootstrap 3.3.6 -->
-{{--<script src="assets/bootstrap/js/bootstrap.min.js"></script>--}}
-<!-- iCheck -->
-{{--<script src="assets/plugins/iCheck/icheck.min.js"></script>--}}
-
 
 <style>
     .form-group{
@@ -149,7 +138,6 @@
             }
         }
     })
-
 </script>
 </body>
 </html>

@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//github第三方登录
-Route::get('github', 'UserThirdPartyController@redirectToProvider');
-Route::get('github/callback', 'UserThirdPartyController@handleProviderCallback');
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['domain'=>config('sys.sys_domain') ],function (){
+    //github第三方登录
+    Route::get('github', 'UserThirdPartyController@redirectToProvider');
+    Route::get('github/callback', 'UserThirdPartyController@handleProviderCallback');
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+

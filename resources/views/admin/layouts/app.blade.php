@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Data Tables</title>
+    <title>星辰Admin-@yield('title','首页')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -29,6 +29,11 @@
     <![endif]-->
     <!-- jQuery 2.2.3 -->
     <script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- 引入组件库 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/element-ui/1.2.9/theme-default/index.css">
+    <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/element-ui/1.2.9/index.js"></script>
+    <script src="//cdn.bootcss.com/axios/0.16.1/axios.min.js"></script>
     <script>
         $.ajaxSetup({ headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -45,218 +50,13 @@
     @include('admin.layouts.menu')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" >
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                首页
-                <small></small>
-            </h1>
-            <ol class="breadcrumb" id="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            </ol>
-        </section>
-
-        <!-- Main content -->
-        @section('content')
-        <section class="content" >
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- /.box -->
-
-                    <div class="box  box-success">
-                        <div class="box-header">
-                            <button url="/index.php/user/add.html" data="" type="button" class="btn btn-success refresh"><i class="fa fa-plus"></i> 新增</button>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <table id="example" class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
+    @section('content')
 
 
 
 
-
-
-
-
-
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </section>
-        @show
         <!-- /.content -->
-    </div>
+    @show
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -277,9 +77,6 @@
 
 <!-- Bootstrap 3.3.6 -->
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -290,52 +87,14 @@
 <script src="assets/dist/js/demo.js"></script>
 <!-- page script -->
 
-<script src="common/bootbox/bootbox.min.js"></script>
+{{--<script src="common/bootbox/bootbox.min.js"></script>--}}
 
 <script src="common/weather/jquery.leoweather.min.js"></script>
+<script src="js/moment.min.js"></script>
 
 
 <script>
     $(document).ready(function() {
-        /**
-         * 自动适配面包屑导航
-         */
-        $('body').on('click', '.menuChild', function() {
-            height = $(window).height();
-            $('.menuChild').removeClass('active');
-            $(this).addClass('active');
-            var parentName = $.trim($(this).parent().prev().text());
-            var ownName = $(this).children('a').text();
-            var breadcrumb = $('#breadcrumb');
-            breadcrumb.html('<li><a href=""><i class="fa fa-dashboard"></i>首页</a></li>');
-            breadcrumb.append('<li>'+ parentName +'</li><li class="active">'+ ownName +'</li>');
-            breadcrumb.prev().text(ownName);
-
-
-        });
-        /**
-         * 表格
-         */
-        $('#example').dataTable( {
-            "oLanguage": {
-                "sLengthMenu": "每页显示 _MENU_ 条记录",
-                "sZeroRecords": "抱歉， 没有找到",
-                "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
-                "sInfoEmpty": "没有数据",
-                "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
-                "oPaginate": {
-                    "sFirst": "首页",
-                    "sPrevious": "前一页",
-                    "sNext": "后一页",
-                    "sLast": "尾页"
-                },
-                "sZeroRecords": "没有检索到数据",
-                "sProcessing": "<img src='assets/dis/img/loading.gif' />",
-
-            },
-
-        });
-
         /**
          * 时间天气
          */
@@ -348,5 +107,8 @@
 
 
 </script>
+@section('script')
+
+    @show
 </body>
 </html>

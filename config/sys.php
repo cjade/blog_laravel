@@ -22,13 +22,7 @@ return [
     'sys_admin_domain' => 'admin.blog.com',
 
     //博客访问域名
-    'sys_blog_domain' => [
-        'www.blog.com',
-        'blog.com'
-    ],
-
-    //博客访问域名无前缀
-    'sys_blog_nopre_domain' => 'blog.com',
+    'sys_domain' => 'www.blog.com',
 
     //分页每页显示条数
     'page'=>'10',

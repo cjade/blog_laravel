@@ -1,6 +1,16 @@
 @extends('admin.layouts.app')
 @section('content')
-    <section class="content">
+    <div class="content-wrapper" >
+        <section class="content-header">
+            <h1>
+                首页
+                <small></small>
+            </h1>
+            <ol class="breadcrumb" id="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            </ol>
+        </section>
+        <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-xs-12">
@@ -131,5 +141,6 @@
         <!-- /.row -->
 
     </section>
+    </div>
 @stop
 

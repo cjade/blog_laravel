@@ -26,17 +26,17 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" >
             <li class="header">主菜单</li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <li class="active treeview">
+                <a href="admin-default">
+                    <i class="fa fa-dashboard"></i> <span>管理员管理</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="menuChild"><a href="assets/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li class="menuChild"><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                    <li class="menuChild"><a href="jump"><i class="fa fa-circle-o"></i> 跳</a></li>
+                    <li class="active"><a href="admin-user"><i class="fa fa-circle-o"></i>管理员列表</a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i>角色管理</a></li>
+                    <li><a href="jump"><i class="fa fa-circle-o"></i> 跳</a></li>
                 </ul>
             </li>
 
