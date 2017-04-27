@@ -29,7 +29,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="common/img/lol-timo-panda.png" onerror="this.src='common/img/lol-timo-panda.png'" class="user-image" alt="User Image">
-                        <span class="hidden-xs">admin</span>
+                        <span class="hidden-xs">{{session('user')->nickname}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -37,8 +37,8 @@
                             <img src="common/img/lol-timo-panda.png" onerror="this.src='common/img/lol-timo-panda.png'" class="img-circle" alt="User Image">
 
                             <p>
-                                admin - 超级管理员
-                                <small>注册时间: 2017-04-06</small>
+                                {{session('user')->nickname}} - 超级管理员
+                                <small>注册时间: {{ date('Y-m-d H:i:s',session('user')->created_at)}}</small>
                             </p>
                         </li>
 
