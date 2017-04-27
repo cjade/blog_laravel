@@ -70,11 +70,10 @@
 
                                 <el-table-column prop="state" label="状态"
                                                  :filters="[{ text: '正常', value: 1 }, { text: '禁用', value: 0 }]"
-                                                 :formatter="setState"
                                                  :filter-method="stateTag" >
                                     <template scope="scope"  >
-                                        <el-tag :type="scope.row.state === 0 ? 'danger' : 'success'"  close-transition>
-                                            @{{scope.row.state}}
+                                        <el-tag :type="scope.row.state === 0 ? 'danger' : 'success'"   close-transition>
+                                            @{{scope.row.state===1?'正常':'禁用'}}
                                         </el-tag>
                                     </template>
                                 </el-table-column>
@@ -205,14 +204,6 @@
                 //状态筛选
                 stateTag(value, row) {
                     return row.state === value;
-                },
-                setState(row, column) {
-                    if(row.state ===1 )
-                    {
-                        return '正常';
-                    }else {
-                        return '禁用';
-                    }
                 },
                 //修改没有显示数
                 sizeChange: function (pageSize) {
