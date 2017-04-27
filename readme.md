@@ -1,11 +1,11 @@
 ## Mcoo
 
-![macbook](https://raw.githubusercontent.com/cjade/blog_laravel/master/screen.jpg)
+![macbook](https://raw.githubusercontent.com/cjade/Mcoo/master/screen.jpg)
 
 
 本项目使用 PHP 框架 [Laravel 5.4](https://doc.laravel-china.org/docs/5.4/) 进行开发。 
 项目依赖了部分云服务，如图片使用了七牛云储存。（目前必须，暂时没有加入本地存储图片的功能）    
-系统后台使用了Vuejs + Element-UI实现前后端分离 
+系统后台使用了Vuejs + Element-UI 
 
 
 ### 博客功能具有以下功能
@@ -61,8 +61,8 @@
 
 > 如果要开启调试模式，请修改 `.env` 文件， `APP_ENV=local` 和 `APP_DEBUG=true` 。
 
-* 首页地址：http://mcoo.me/
-* 管理后台：http://admin.mcoo.com/
+* 首页地址：http://www.mcoo.me/
+* 管理后台：http://admin.mcoo.me/
 
 默认用户名：test@test.com
 密码：111111
