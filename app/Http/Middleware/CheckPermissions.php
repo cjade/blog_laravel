@@ -55,4 +55,12 @@ class CheckPermissions
         }
         return true;
     }
+
+    /**
+     * 判断权限
+     * @action permissions
+     */
+    private function permissions(){
+        return response()->json(['status' => 'error','info' => '没有权限!']);
+    }
 }

@@ -36,11 +36,17 @@
                                             <el-form-item label="管理员id">
                                                 <span>@{{ props.row.user_id }}</span>
                                             </el-form-item>
-                                            <el-form-item label="商品 ID">
-                                                <span>@{{ props.row.user_id }}</span>
+                                            <el-form-item label="性别">
+                                                <span>@{{ props.row.sex }}</span>
                                             </el-form-item>
-                                            <el-form-item label="店铺地址">
-                                                <span>@{{ props.row.nickname }}</span>
+                                            <el-form-item label="最后登录时间">
+                                                <span>@{{ props.row.last_login_time }}</span>
+                                            </el-form-item>
+                                            <el-form-item label="最后登录ip">
+                                                <span>@{{ props.row.last_login_ip }}</span>
+                                            </el-form-item>
+                                            <el-form-item label="登录次数">
+                                                <span>@{{ props.row.login_number }}</span>
                                             </el-form-item>
                                         </el-form>
                                     </template>
@@ -54,20 +60,40 @@
                                 </el-table-column>
                                 <el-table-column
                                         prop="user_email"
-                                        label="邮箱">
+                                        label="邮箱"
+                                    width="200">
                                 </el-table-column>
                                 <el-table-column
+                                        prop="phone"
+                                        label="电话">
+                                </el-table-column>
+
+                                <el-table-column prop="state" label="状态"
+                                                 :filters="[{ text: '正常', value: 1 }, { text: '禁用', value: 0 }]"
+                                                 :formatter="setState"
+                                                 :filter-method="stateTag" >
+                                    <template scope="scope"  >
+                                        <el-tag :type="scope.row.state === 0 ? 'danger' : 'success'"  close-transition>
+                                            @{{scope.row.state}}
+                                        </el-tag>
+                                    </template>
+                                </el-table-column>
+
+                                <el-table-column
                                         prop="created_at"
+                                        sortable
                                         label="创建时间"
                                         :formatter="dateFormat"
                                         width="180">
                                 </el-table-column>
 
-                                <el-table-column label="操作">
+                                <el-table-column  label="操作">
                                     <template scope="scope">
                                         <el-button
                                                 size="small"
+                                                type="info"
                                         @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+
                                         <el-button
                                                 size="small"
                                                 type="danger"
@@ -77,6 +103,7 @@
                             </el-table>
 
                         </div>
+
                         <div class="box-footer clearfix" style="text-align: right;">
                             <el-pagination v-bind:current-Page="pageIndex" v-bind:page-size="pageSize" :total="total"
                                            layout="total,sizes,prev,pager,next,jumper" v-bind:page-sizes="pageSizes"
@@ -138,7 +165,7 @@
             },
             created: function () {
                 this.getData();
-            },watch: {},
+            },
             methods: {
                 tableRowClassName(row, index) {
                     if(index%2 ==1){
@@ -162,7 +189,7 @@
                         if (res != false) {
                             _this.tableData = res.data;
                             _this.total = res.total;
-                            _this.currentPage = res.current_page;
+                            _this.pageIndex = res.current_page;
                             _this.loading = false;
                         } else {
                             _this.$message({
@@ -174,6 +201,18 @@
                     }).catch(function (error) {
                         console.log(error);
                     });
+                },
+                //状态筛选
+                stateTag(value, row) {
+                    return row.state === value;
+                },
+                setState(row, column) {
+                    if(row.state ===1 )
+                    {
+                        return '正常';
+                    }else {
+                        return '禁用';
+                    }
                 },
                 //修改没有显示数
                 sizeChange: function (pageSize) {
@@ -199,26 +238,22 @@
                         params: {
                             id : row.user_id,
                         }
-
                     }).then(function (response) {
                         _this.loading = false;
                         let res = response.data;
                         console.log(res);
                         if(res.status == 'success'){
                             _this.$message({
-                                message: '删除成功!',
-                                type: 'success',
+                                message: res.info,
+                                type: res.status
                             });
                             _this.tableData.splice(index, 1);;
                         }else {
                             _this.$message({
-                                message: '删除失败!',
-                                type: 'error'
+                                message: res.info,
+                                type: res.status
                             });
                         }
-
-
-
                     }).catch(function (error) {
                         console.log(error);
                     });
@@ -229,10 +264,14 @@
                 //时间格式化
                 dateFormat:function(row, column) {
                     var date = row[column.property];
-                    if (date == undefined) {
+                    console.log(date);
+                    if (row[column.property] === 0) {
                         return "";
                     }
                     return moment(date).format("YYYY-MM-DD HH:mm:ss");
+                },
+                dateFor:function (row,colume) {
+                    console.log(row);
                 }
             }
 

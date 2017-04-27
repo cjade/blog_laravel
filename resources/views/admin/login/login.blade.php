@@ -48,7 +48,6 @@
                 <el-input v-model="ruleForm.email" type="email" class="has-feedback form-group"  placeholder="Email"></el-input>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </el-form-item>
-
             <el-form-item  prop="password">
                 <el-input v-model="ruleForm.password" type="password" class="has-feedback form-group" placeholder="Password "></el-input>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>

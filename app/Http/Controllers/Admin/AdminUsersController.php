@@ -45,7 +45,15 @@ class AdminUsersController extends Controller
         if (empty(intval($request->id))) {
             return response()->json(['status' => '0', 'info' => 'ID不能为空']);
         }
+        if(session('user')->user_id == $request->id){
+            return response()->json(['status' => 'error', 'info' => '不能删除自己!']);
+        }
         $result = DB::table('users')->where('user_id',$request->id)->delete();
-        return response()->json(['status' => !$result ? 'error' : 'success']);
+        if($result){
+            return response()->json(['status' => 'success','info' => '删除成功!']);
+        }else{
+            return response()->json(['status' => 'error','info' => '删除失败!']);
+        }
+
     }
 }
