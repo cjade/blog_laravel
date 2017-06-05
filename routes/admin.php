@@ -27,6 +27,8 @@ Route::group(['domain'=>config('sys.sys_admin_domain') ],function (){
         Route::get('admin-getUser', 'AdminUsersController@listUser')->name('admin-user');;
         //删除管理员
         Route::delete('admin-userDel', 'AdminUsersController@del');
+        //文章列表
+        Route::get('articles-index', 'ArticlesController@index');
     });
 
 });

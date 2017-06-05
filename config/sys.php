@@ -26,4 +26,8 @@ return [
 
     //分页每页显示条数
     'page'=>'10',
+
+    /*验证码配置*/
+    'GEE_ID'    =>  'ac9b55dc580f169d2d4b8f699664564b',
+    'GEE_KEY'   =>  '6ae7db3ff3e1f1aab4e8090625303fcb'
 ];

@@ -34,6 +34,11 @@
     <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
     <script src="//cdn.bootcss.com/element-ui/1.2.9/index.js"></script>
     <script src="//cdn.bootcss.com/axios/0.16.1/axios.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <script>
         $.ajaxSetup({ headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

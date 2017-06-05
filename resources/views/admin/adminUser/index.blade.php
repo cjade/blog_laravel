@@ -219,7 +219,6 @@
                 },
                 //删除
                 handleDelete(index,row) {
-                    console.log(index);
                     let _this = this;
                     _this.$confirm('确认删除该记录吗?', '提示', {
                         //type: 'warning'
@@ -255,7 +254,7 @@
                 //时间格式化
                 dateFormat:function(row, column) {
                     var date = row[column.property];
-                    console.log(date);
+//                    console.log(date);
                     if (row[column.property] === 0) {
                         return "";
                     }

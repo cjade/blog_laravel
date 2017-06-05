@@ -38,7 +38,7 @@ class AdminUsersController extends Controller
     }
 
     /**
-     * @return string
+     * @return strin
      */
     public function del(Request $request)
     {

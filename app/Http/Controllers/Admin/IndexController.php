@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Parsedown;
 
+
 class IndexController extends Controller
 {
     public function __construct()

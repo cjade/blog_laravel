@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\GeetestController;
 
 class LoginController extends Controller
 {
@@ -25,8 +26,15 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if($request->isMethod('post')){
-
             $input =  $request->all();//获取所以input值
+//            $geetest = new GeetestController();
+//
+//            if(!$geetest->geetest_check($input['geetest_challenge'],$input['geetest_validate'],$input['geetest_seccode'])){
+//                return ['status'=>0,'info'=>'请完成验证!'];
+//            }
+            if(empty($input['geetest_challenge'])){//判断极验
+                return ['status'=>0,'info'=>'请完成验证!'];
+            }
 //            return ['status'=>0,'info'=>$input['email']];
             $user = DB::table('users')->where([
                 ['user_email','=',$input['email']],
@@ -93,4 +101,6 @@ class LoginController extends Controller
         $request->session()->forget('user');
         return view('public.jump',['status'=>1,'info'=>'退出成功！','url'=>'login']);
     }
+
+
 }

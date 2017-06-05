@@ -8,7 +8,7 @@
                 <img src="common/img/lol-timo-panda.png" onerror="this.src='common/img/lol-timo-panda.png'" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{session('user')->nickname}}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>

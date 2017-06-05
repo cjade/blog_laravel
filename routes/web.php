@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//极验
+Route::get('/getVerify', 'GeetestController@getVerify')->name('getVerify');
 Route::group(['domain'=>config('sys.sys_domain') ],function (){
     //github第三方登录
     Route::get('github', 'UserThirdPartyController@redirectToProvider');
@@ -17,5 +19,6 @@ Route::group(['domain'=>config('sys.sys_domain') ],function (){
     Route::get('/', function () {
         return view('welcome');
     });
+
 });
 
